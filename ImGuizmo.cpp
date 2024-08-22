@@ -647,9 +647,14 @@ namespace IMGUIZMO_NAMESPACE
       CenterCircleSize           = 6.0f;
 
       // initialize default colors
-      Colors[DIRECTION_X]           = ImVec4(0.666f, 0.000f, 0.000f, 1.000f);
-      Colors[DIRECTION_Y]           = ImVec4(0.000f, 0.666f, 0.000f, 1.000f);
-      Colors[DIRECTION_Z]           = ImVec4(0.000f, 0.000f, 0.666f, 1.000f);
+
+      static ImVec4 redColor = { 1.0f, 0.36f, 0.239f, 1.0f };
+      static ImVec4 greenColor = { 0.69f, 0.871f, 0.365f, 1.0f };
+      static ImVec4 blueColor = { 0.345f, 0.592f, 0.976f, 1.0f };
+
+      Colors[DIRECTION_X]           = redColor;
+      Colors[DIRECTION_Y]           = greenColor;
+      Colors[DIRECTION_Z]           = blueColor;
       Colors[PLANE_X]               = ImVec4(0.666f, 0.000f, 0.000f, 0.380f);
       Colors[PLANE_Y]               = ImVec4(0.000f, 0.666f, 0.000f, 0.380f);
       Colors[PLANE_Z]               = ImVec4(0.000f, 0.000f, 0.666f, 0.380f);
@@ -1543,8 +1548,8 @@ namespace IMGUIZMO_NAMESPACE
       // draw
       bool belowAxisLimit = false;
       bool belowPlaneLimit = false;
-      constexpr float arrowSize = 12.0f;
-      constexpr float lineThickness = 6.0f;
+      constexpr float arrowSize = 10.0f;
+      constexpr float lineThickness = 3.0f;
       for (unsigned int i = 0; i < 3; ++i)
       {
          vec_t dirPlaneX, dirPlaneY, dirAxis;
